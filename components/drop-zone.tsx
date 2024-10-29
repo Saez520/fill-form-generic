@@ -2,6 +2,8 @@ import React, { useState, useRef, ChangeEvent, DragEvent } from "react";
 import { Input } from "./ui/input";
 import Image from "next/image";
 import '../app/globals.css';
+import { toast } from "@/hooks/use-toast";
+import { Toast } from "./ui/toast";
 
 interface DropzoneProps {
     maxFileSize?: number;
@@ -41,7 +43,11 @@ const Dropzone: React.FC<DropzoneProps> = ({ maxFileSize = 25000000, onFileUploa
         }
 
         if (droppedFile.type !== "application/vnd.openxmlformats-officedocument.wordprocessingml.document") {
-            alert("Solo se permiten archivos .docx");
+            toast({
+                variant: "default",
+                title: "Incorrect Format",
+                description: "Only .docx files are allowed",
+            });
             return;
         }
 

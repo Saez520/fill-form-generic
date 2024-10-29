@@ -144,11 +144,12 @@ export default function Component() {
                     </div>
                 ))}
 
-                <Dropzone onFileUpload={handleFileUpload} />
-
                 <Button type="button" onClick={addChange} className="w-full bg-blue-500 hover:bg-blue-700">
                     Add Variable
                 </Button>
+
+                <Dropzone onFileUpload={handleFileUpload} />
+
                 <Button type="submit" className="w-full bg-green-500 hover:bg-green-700">
                     Submit Changes
                 </Button>
