@@ -3,7 +3,6 @@ import { Input } from "./ui/input";
 import Image from "next/image";
 import '../app/globals.css';
 import { toast } from "@/hooks/use-toast";
-import { Toast } from "./ui/toast";
 import { Button } from "./ui/button";
 
 interface DropzoneProps {
