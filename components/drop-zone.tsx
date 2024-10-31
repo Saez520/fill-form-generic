@@ -92,7 +92,7 @@ const Dropzone: React.FC<DropzoneProps> = ({ maxFileSize = 25000000, onFileUploa
                     )}
                 </p>
             </div>
-            <Button className="">drop-zone cleaning</Button>
+            <Button onClick={handleReset} className="">drop-zone cleaning</Button>
         </>
     );
 };
