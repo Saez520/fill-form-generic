@@ -10,7 +10,9 @@ const Navbar: React.FC = () => {
             <div className="flex w-full items-center space-x-4 ">
                 <div className='w-1/2'>
                     <Label className="font-satoshi font-black tracking-wider bg-gradient-to-r from-purple-400 via-pink-300 to-blue-500 bg-clip-text text-transparent">
-                        FILL FORM
+                        <Link href="/">
+                            FILL FORM
+                        </Link>
                     </Label>
                 </div>
                 <div className="flex w-1/2 justify-end space-x-5">
