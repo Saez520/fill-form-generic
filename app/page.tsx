@@ -1,7 +1,4 @@
-import { ModeToggle } from "@/components/change-mode";
 import Navbar from "@/components/navbar";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 
 export default function Home() {
   return (

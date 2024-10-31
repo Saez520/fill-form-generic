@@ -61,7 +61,7 @@ export default function Component() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        const { changes, files } = formData;
+        const { changes } = formData;
         const emptyFields = changes.filter(change => !change.name || !change.value);
 
         if (emptyFields.length > 0) {

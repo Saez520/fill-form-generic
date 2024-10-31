@@ -3,7 +3,7 @@ import { Input } from "./ui/input";
 import Image from "next/image";
 import '../app/globals.css';
 import { toast } from "@/hooks/use-toast";
-import { Toast } from "./ui/toast";
+import { Button } from "./ui/button";
 
 interface DropzoneProps {
     maxFileSize?: number;
@@ -60,36 +60,39 @@ const Dropzone: React.FC<DropzoneProps> = ({ maxFileSize = 25000000, onFileUploa
     const handleReset = () => setFile(null);
 
     return (
-        <div
-            className="border-2 border-dashed border-gray-500 rounded-lg mt-4 p-8 text-center relative flex flex-col items-center justify-center"
-            onDrop={handleDrop}
-            onDragOver={handleDragOver}
-            onClick={() => fileInputRef.current?.click()}
-        >
-            <Input
-                type="file"
-                ref={fileInputRef}
-                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                onChange={handleFileChange}
-                accept=".docx"
-                style={{ fontFamily: 'GeistVF' }}
-            />
-            <Image
-                src="/upload.svg"
-                alt="Dropzone Image"
-                width={50}
-                height={50}
-            />
-            <p className="mt-4">
-                {file ? (
-                    <span>
-                        {file.name} - {(file.size / 1024 / 1024).toFixed(2)} MB
-                    </span>
-                ) : (
-                    "No hay archivos seleccionados"
-                )}
-            </p>
-        </div>
+        <>
+            <div
+                className="border-2 border-dashed border-gray-500 rounded-lg mt-4 p-8 text-center relative flex flex-col items-center justify-center"
+                onDrop={handleDrop}
+                onDragOver={handleDragOver}
+                onClick={() => fileInputRef.current?.click()}
+            >
+                <Input
+                    type="file"
+                    ref={fileInputRef}
+                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                    onChange={handleFileChange}
+                    accept=".docx"
+                    style={{ fontFamily: 'GeistVF' }}
+                />
+                <Image
+                    src="/upload.svg"
+                    alt="Dropzone Image"
+                    width={50}
+                    height={50}
+                />
+                <p className="mt-4">
+                    {file ? (
+                        <span>
+                            {file.name} - {(file.size / 1024 / 1024).toFixed(2)} MB
+                        </span>
+                    ) : (
+                        "No hay archivos seleccionados"
+                    )}
+                </p>
+            </div>
+            <Button onClick={handleReset} className="">drop-zone cleaning</Button>
+        </>
     );
 };
 
